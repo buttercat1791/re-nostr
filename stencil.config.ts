@@ -8,6 +8,14 @@ export const config: Config = {
   taskQueue: 'async',
   outputTargets: [
     {
+      type: 'dist',
+    },
+    {
+      type: 'dist-custom-elements',
+      generateTypeDeclarations: true,
+      includeGlobalScripts: true,
+    },
+    {
       type: 'www',
       // comment the following line to disable service workers in production
       serviceWorker: null,

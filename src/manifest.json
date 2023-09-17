@@ -1,8 +1,15 @@
 {
-  "name": "Stencil Starter",
-  "short_name": "Stencil",
-  "start_url": "/",
-  "display": "standalone",
+  "name": "Re:Nostr",
+  "description": "Send notes and other stuff to Nostr from anywhere around the web",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Re:Nostr"
+  },
+  "permissions": [
+    "activeTab"
+  ],
   "icons": [{
     "src": "assets/icon/icon.png",
     "sizes": "512x512",
