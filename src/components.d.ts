@@ -17,6 +17,10 @@ export namespace Components {
     interface PageProfile {
         "name": string;
     }
+    interface PopoverNote {
+        "includeQuote": boolean;
+        "quotedContent"?: string;
+    }
 }
 declare global {
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
@@ -49,12 +53,19 @@ declare global {
         prototype: HTMLPageProfileElement;
         new (): HTMLPageProfileElement;
     };
+    interface HTMLPopoverNoteElement extends Components.PopoverNote, HTMLStencilElement {
+    }
+    var HTMLPopoverNoteElement: {
+        prototype: HTMLPopoverNoteElement;
+        new (): HTMLPopoverNoteElement;
+    };
     interface HTMLElementTagNameMap {
         "app-root": HTMLAppRootElement;
         "app-tabs": HTMLAppTabsElement;
         "page-home": HTMLPageHomeElement;
         "page-notice": HTMLPageNoticeElement;
         "page-profile": HTMLPageProfileElement;
+        "popover-note": HTMLPopoverNoteElement;
     }
 }
 declare namespace LocalJSX {
@@ -69,12 +80,17 @@ declare namespace LocalJSX {
     interface PageProfile {
         "name"?: string;
     }
+    interface PopoverNote {
+        "includeQuote"?: boolean;
+        "quotedContent"?: string;
+    }
     interface IntrinsicElements {
         "app-root": AppRoot;
         "app-tabs": AppTabs;
         "page-home": PageHome;
         "page-notice": PageNotice;
         "page-profile": PageProfile;
+        "popover-note": PopoverNote;
     }
 }
 export { LocalJSX as JSX };
@@ -86,6 +102,7 @@ declare module "@stencil/core" {
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-notice": LocalJSX.PageNotice & JSXBase.HTMLAttributes<HTMLPageNoticeElement>;
             "page-profile": LocalJSX.PageProfile & JSXBase.HTMLAttributes<HTMLPageProfileElement>;
+            "popover-note": LocalJSX.PopoverNote & JSXBase.HTMLAttributes<HTMLPopoverNoteElement>;
         }
     }
 }

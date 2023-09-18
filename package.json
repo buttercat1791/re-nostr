@@ -4,12 +4,15 @@
   "version": "0.0.1",
   "description": "Send notes and other stuff to Nostr from anywhere around the web",
   "scripts": {
-    "build": "stencil build",
-    "start": "stencil build --dev --watch --serve",
+    "build": "stencil build && web-ext build --overwrite-dest",
+    "start": "stencil build && web-ext run",
+    "lint": "web-ext lint",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
+  "main": "./dist/index.cjs.js",
+  "collection": "./dist/collection/collection-manifest.json",
   "devDependencies": {
     "@ionic/core": "^7.0.9",
     "@stencil/core": "^3.3.0",
@@ -19,6 +22,7 @@
     "jest": "~27.0.3",
     "jest-cli": "~27.4.5",
     "puppeteer": "^20.4.0",
+    "web-ext": "^7.7.0",
     "webextension-polyfill": "^0.10.0"
   },
   "license": "MIT"
