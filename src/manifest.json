@@ -3,6 +3,9 @@
   "description": "Send notes and other stuff to Nostr from anywhere around the web",
   "version": "0.0.1",
   "manifest_version": 3,
+  "icons": [{
+    "512": "assets/icon/icon.png"
+  }],
   "action": {
     "default_popup": "index.html",
     "default_title": "Re:Nostr"
@@ -10,11 +13,9 @@
   "permissions": [
     "activeTab"
   ],
-  "icons": [{
-    "src": "assets/icon/icon.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }],
-  "background_color": "#16161d",
-  "theme_color": "#16161d"
+  "background": {
+    "scripts": [
+      "browser-polyfill.js"
+    ]
+  }
 }
