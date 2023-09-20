@@ -6,103 +6,49 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface AppRoot {
-    }
-    interface AppTabs {
-    }
-    interface PageHome {
-    }
-    interface PageNotice {
-    }
-    interface PageProfile {
-        "name": string;
-    }
-    interface PopoverNote {
+    interface ReNostrPopoverNote {
         "includeQuote": boolean;
         "quotedContent"?: string;
     }
+    interface ReNostrPopoverRoot {
+    }
 }
 declare global {
-    interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
+    interface HTMLReNostrPopoverNoteElement extends Components.ReNostrPopoverNote, HTMLStencilElement {
     }
-    var HTMLAppRootElement: {
-        prototype: HTMLAppRootElement;
-        new (): HTMLAppRootElement;
+    var HTMLReNostrPopoverNoteElement: {
+        prototype: HTMLReNostrPopoverNoteElement;
+        new (): HTMLReNostrPopoverNoteElement;
     };
-    interface HTMLAppTabsElement extends Components.AppTabs, HTMLStencilElement {
+    interface HTMLReNostrPopoverRootElement extends Components.ReNostrPopoverRoot, HTMLStencilElement {
     }
-    var HTMLAppTabsElement: {
-        prototype: HTMLAppTabsElement;
-        new (): HTMLAppTabsElement;
-    };
-    interface HTMLPageHomeElement extends Components.PageHome, HTMLStencilElement {
-    }
-    var HTMLPageHomeElement: {
-        prototype: HTMLPageHomeElement;
-        new (): HTMLPageHomeElement;
-    };
-    interface HTMLPageNoticeElement extends Components.PageNotice, HTMLStencilElement {
-    }
-    var HTMLPageNoticeElement: {
-        prototype: HTMLPageNoticeElement;
-        new (): HTMLPageNoticeElement;
-    };
-    interface HTMLPageProfileElement extends Components.PageProfile, HTMLStencilElement {
-    }
-    var HTMLPageProfileElement: {
-        prototype: HTMLPageProfileElement;
-        new (): HTMLPageProfileElement;
-    };
-    interface HTMLPopoverNoteElement extends Components.PopoverNote, HTMLStencilElement {
-    }
-    var HTMLPopoverNoteElement: {
-        prototype: HTMLPopoverNoteElement;
-        new (): HTMLPopoverNoteElement;
+    var HTMLReNostrPopoverRootElement: {
+        prototype: HTMLReNostrPopoverRootElement;
+        new (): HTMLReNostrPopoverRootElement;
     };
     interface HTMLElementTagNameMap {
-        "app-root": HTMLAppRootElement;
-        "app-tabs": HTMLAppTabsElement;
-        "page-home": HTMLPageHomeElement;
-        "page-notice": HTMLPageNoticeElement;
-        "page-profile": HTMLPageProfileElement;
-        "popover-note": HTMLPopoverNoteElement;
+        "re-nostr-popover-note": HTMLReNostrPopoverNoteElement;
+        "re-nostr-popover-root": HTMLReNostrPopoverRootElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppRoot {
-    }
-    interface AppTabs {
-    }
-    interface PageHome {
-    }
-    interface PageNotice {
-    }
-    interface PageProfile {
-        "name"?: string;
-    }
-    interface PopoverNote {
+    interface ReNostrPopoverNote {
         "includeQuote"?: boolean;
         "quotedContent"?: string;
     }
+    interface ReNostrPopoverRoot {
+    }
     interface IntrinsicElements {
-        "app-root": AppRoot;
-        "app-tabs": AppTabs;
-        "page-home": PageHome;
-        "page-notice": PageNotice;
-        "page-profile": PageProfile;
-        "popover-note": PopoverNote;
+        "re-nostr-popover-note": ReNostrPopoverNote;
+        "re-nostr-popover-root": ReNostrPopoverRoot;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-            "app-tabs": LocalJSX.AppTabs & JSXBase.HTMLAttributes<HTMLAppTabsElement>;
-            "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
-            "page-notice": LocalJSX.PageNotice & JSXBase.HTMLAttributes<HTMLPageNoticeElement>;
-            "page-profile": LocalJSX.PageProfile & JSXBase.HTMLAttributes<HTMLPageProfileElement>;
-            "popover-note": LocalJSX.PopoverNote & JSXBase.HTMLAttributes<HTMLPopoverNoteElement>;
+            "re-nostr-popover-note": LocalJSX.ReNostrPopoverNote & JSXBase.HTMLAttributes<HTMLReNostrPopoverNoteElement>;
+            "re-nostr-popover-root": LocalJSX.ReNostrPopoverRoot & JSXBase.HTMLAttributes<HTMLReNostrPopoverRootElement>;
         }
     }
 }
