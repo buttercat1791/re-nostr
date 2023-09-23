@@ -5,14 +5,14 @@ import { Config } from '@stencil/core';
 export const config: Config = {
   taskQueue: 'async',
   namespace: 're-nostr',
+  globalStyle: 'src/global/variables.css',
   outputTargets: [
     {
       type: 'dist',
-    },
-    {
-      type: 'dist-custom-elements',
-      generateTypeDeclarations: true,
-      includeGlobalScripts: true,
+      isPrimaryPackageOutputTarget: true,
     },
   ],
+  devServer: {
+    initialLoadUrl: 'pages/popover.html',
+  },
 };

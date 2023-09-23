@@ -5,7 +5,7 @@
   "description": "Send notes and other stuff to Nostr from anywhere around the web",
   "scripts": {
     "build": "stencil build && web-ext build --overwrite-dest",
-    "start": "stencil build && web-ext run",
+    "start": "stencil build --serve --watch",
     "lint": "web-ext lint",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -14,7 +14,7 @@
   "main": "./dist/index.cjs.js",
   "collection": "./dist/collection/collection-manifest.json",
   "devDependencies": {
-    "@stencil/core": "^3.3.0",
+    "@stencil/core": "^4.3.0",
     "@types/jest": "~27.0.3",
     "@types/webextension-polyfill": "^0.10.2",
     "jest": "~27.0.3",

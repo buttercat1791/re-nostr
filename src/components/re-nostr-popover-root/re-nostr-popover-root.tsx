@@ -10,7 +10,7 @@ export class ReNostrPopoverRoot {
   render() {
     return (
       <Host>
-        <slot></slot>
+        <re-nostr-popover-note />
       </Host>
     );
   }
