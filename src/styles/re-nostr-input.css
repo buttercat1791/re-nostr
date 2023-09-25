@@ -1,0 +1,47 @@
+textarea.reNostrInput {
+  display: inline-block;
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-font-size);
+  color: var(--theme-text-color);
+  background-color: var(--theme-card-color);
+  border: var(--theme-border-width) solid var(--theme-border-color);
+  border-radius: var(--theme-border-radius);
+  padding: var(--theme-padding);
+  margin: var(--theme-margin);
+  resize: none;
+}
+
+textarea.reNostrInput:focus {
+  outline: none;
+  border-color: var(--theme-primary-color);
+}
+
+input[type="date"].reNostrInput,
+input[type="email"].reNostrInput,
+input[type="number"].reNostrInput,
+input[type="password"].reNostrInput,
+input[type="search"].reNostrInput,
+input[type="tel"].reNostrInput,
+input[type="text"].reNostrInput,
+input[type="url"].reNostrInput {
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-font-size);
+  color: var(--theme-text-color);
+  background-color: var(--theme-card-color);
+  border: var(--theme-border-width) solid var(--theme-border-color);
+  border-radius: var(--theme-border-radius);
+  padding: var(--theme-padding);
+  margin: var(--theme-margin);
+}
+
+input[type="date"].reNostrInput:focus,
+input[type="email"].reNostrInput:focus,
+input[type="number"].reNostrInput:focus,
+input[type="password"].reNostrInput:focus,
+input[type="search"].reNostrInput:focus,
+input[type="tel"].reNostrInput:focus,
+input[type="text"].reNostrInput:focus,
+input[type="url"].reNostrInput:focus {
+  outline: none;
+  border-color: var(--theme-primary-color);
+}

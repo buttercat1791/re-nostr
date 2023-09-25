@@ -1,3 +1,6 @@
+@import url("../../styles/re-nostr-input.css");
+@import url("../../styles/re-nostr-button.css");
+
 :host {
   display: block;
 }

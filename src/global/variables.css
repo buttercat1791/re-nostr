@@ -1,21 +1,41 @@
 :root {
+  /*
+  Global variables
+  */
+
   /* Dark theme color variables */
-  --theme-text: #fff;
-  --theme-title: #fff;
-  --theme-primary: #b5ff6b;
-  --theme-secondary: #383838;
-  --theme-tertiary: #fff;
-  --theme-border: #222;
-  --theme-card: #111;
-  --theme-background: #000;
+  --theme-text-color: #fff;
+  --theme-title-color: #fff;
+  --theme-primary-color: #b5ff6b;
+  --theme-secondary-color: #383838;
+  --theme-tertiary-color: #fff;
+  --theme-border-color: #222;
+  --theme-card-color: #111;
+  --theme-background-color: #000;
 
   /* Font variables */
   --theme-font-family: Helvetica, Arial, sans-serif;
-  --theme-font-size: 16px;
+  --theme-font-size: 14px;
+  --theme-font-weight: 400;
+  --theme-font-weight-bold: 600;
 
-  color: var(--theme-text);
-  background-color: var(--theme-background);
-  border-color: var(--theme-border);
+  /* Padding variables */
+  --theme-padding: 8px;
+  --theme-margin: 4px;
+  
+  /* Border variables */
+  --theme-border-radius: 8px;
+  --theme-border-width: 1px;
+
+  /*
+  Global styles
+  */
+
+  /* Global theme styles */
+  background-color: var(--theme-background-color);
+
+  /* Global text styles */
+  color: var(--theme-text-color);
   font-family: var(--theme-font-family);
-  font-size: var(--theme-font-size); 
+  font-size: var(--theme-font-size);
 }
