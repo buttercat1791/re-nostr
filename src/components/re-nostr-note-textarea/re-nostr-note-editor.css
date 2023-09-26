@@ -1,0 +1,16 @@
+@import url("../../styles/re-nostr-input.css");
+@import url("../../styles/re-nostr-content-editable.css");
+
+:host {
+  display: flex;
+  flex-direction: column;
+  border: var(--theme-border-width) solid var(--theme-border-color);
+  border-radius: var(--theme-border-radius);
+}
+
+article#noteInput {
+  height: auto;
+  border: none;
+  margin: none;
+  background-color: var(--theme-background-color);
+}

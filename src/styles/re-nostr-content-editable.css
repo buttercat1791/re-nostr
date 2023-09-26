@@ -1,0 +1,15 @@
+.reNostrContentEditable[contentEditable="true"] {
+  display: inline-block;
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-font-size);
+  color: var(--theme-text-color);
+  background-color: var(--theme-background-color);
+  border: var(--theme-border-width) solid var(--theme-border-color);
+  border-radius: var(--theme-border-radius);
+  padding: var(--theme-padding);
+}
+
+.reNostrContentEditable[contentEditable="true"]:focus {
+  outline: none;
+  border-color: var(--theme-primary-color);
+}

@@ -7,8 +7,8 @@ import { Component, Host, Listen, Prop, State, h } from '@stencil/core';
 })
 export class ReNostrPopoverNote {
 
-  private readonly noteContentLabel: string = 'Note Content';
-  private readonly quotedContentLabel: string = 'Quoted Content';
+  private readonly quotedContentId: string = 'quotedContent';
+  private readonly sendButtonId: string = 'sendButton';
 
   @Prop() includeQuote: boolean;
 
@@ -21,28 +21,33 @@ export class ReNostrPopoverNote {
 
   @Listen('click')
   onClick(event: MouseEvent) {
-    // TODO: Send with NDK
+    const target = event.target as HTMLElement;
+
+    if (target.id === this.sendButtonId) {
+
+    }
   }
 
   render() {
     return (
       <Host>
-        <div class="noteContent">
-          <label>{this.noteContentLabel}</label>
-          <textarea class="reNostrInput" />
-        </div>
-        {this.includeQuote && this.renderQuotedContent()}
-        <button class="reNostrButton">Send</button>
+        <re-nostr-note-editor>
+          {this.includeQuote && this.renderQuotedContent()}
+        </re-nostr-note-editor>
+        <button id={this.sendButtonId} class='reNostrButton'>Send</button>
       </Host>   
     );
   }
 
   private renderQuotedContent() {
     return (
-      <div class="quotedContent">
-        <label>{this.quotedContentLabel}</label>
-        <textarea class="reNostrInput" />
-      </div>
+      <blockquote
+        id={this.quotedContentId}
+        class='reNostrBlockquote'
+        contentEditable={false}
+      >
+        {this.quotedContent}
+      </blockquote>
     )
   }
 

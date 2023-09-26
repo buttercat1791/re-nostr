@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ReNostrNoteEditor {
+        "placeholder"?: string;
+    }
     interface ReNostrPopoverNote {
         "includeQuote": boolean;
         "quotedContent"?: string;
@@ -14,6 +17,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLReNostrNoteEditorElement extends Components.ReNostrNoteEditor, HTMLStencilElement {
+    }
+    var HTMLReNostrNoteEditorElement: {
+        prototype: HTMLReNostrNoteEditorElement;
+        new (): HTMLReNostrNoteEditorElement;
+    };
     interface HTMLReNostrPopoverNoteElement extends Components.ReNostrPopoverNote, HTMLStencilElement {
     }
     var HTMLReNostrPopoverNoteElement: {
@@ -27,11 +36,15 @@ declare global {
         new (): HTMLReNostrPopoverRootElement;
     };
     interface HTMLElementTagNameMap {
+        "re-nostr-note-editor": HTMLReNostrNoteEditorElement;
         "re-nostr-popover-note": HTMLReNostrPopoverNoteElement;
         "re-nostr-popover-root": HTMLReNostrPopoverRootElement;
     }
 }
 declare namespace LocalJSX {
+    interface ReNostrNoteEditor {
+        "placeholder"?: string;
+    }
     interface ReNostrPopoverNote {
         "includeQuote"?: boolean;
         "quotedContent"?: string;
@@ -39,6 +52,7 @@ declare namespace LocalJSX {
     interface ReNostrPopoverRoot {
     }
     interface IntrinsicElements {
+        "re-nostr-note-editor": ReNostrNoteEditor;
         "re-nostr-popover-note": ReNostrPopoverNote;
         "re-nostr-popover-root": ReNostrPopoverRoot;
     }
@@ -47,6 +61,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "re-nostr-note-editor": LocalJSX.ReNostrNoteEditor & JSXBase.HTMLAttributes<HTMLReNostrNoteEditorElement>;
             "re-nostr-popover-note": LocalJSX.ReNostrPopoverNote & JSXBase.HTMLAttributes<HTMLReNostrPopoverNoteElement>;
             "re-nostr-popover-root": LocalJSX.ReNostrPopoverRoot & JSXBase.HTMLAttributes<HTMLReNostrPopoverRootElement>;
         }
