@@ -2,7 +2,7 @@ blockquote.reNostrBlockquote {
   display: inline-block;
   font-family: var(--theme-font-family);
   font-size: var(--theme-font-size);
-  color: var(--theme-quoted-text-color);
+  color: var(--theme-placeholder-color);
   background-color: var(--theme-card-color);
   border: var(--theme-border-width) solid var(--theme-border-color);
   border-radius: var(--theme-border-radius);

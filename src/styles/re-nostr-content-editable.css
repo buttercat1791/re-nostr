@@ -13,3 +13,7 @@
   outline: none;
   border-color: var(--theme-primary-color);
 }
+
+.reNostrContentEditable.reNostrPlaceholder[contentEditable="true"] {
+  color: var(--theme-placeholder-color);
+}
