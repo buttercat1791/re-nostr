@@ -28,6 +28,9 @@
   --theme-border-radius: 8px;
   --theme-border-width: 1px;
 
+  /* Scrollbar variables */
+  --theme-scrollbar-width: 4px;
+
   /*
   Global styles
   */

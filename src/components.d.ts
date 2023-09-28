@@ -7,6 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ReNostrNoteEditor {
+        /**
+          * Placeholder text to show before the user starts typing.
+         */
         "placeholder"?: string;
     }
     interface ReNostrPopoverNote {
@@ -15,6 +18,10 @@ export namespace Components {
     }
     interface ReNostrPopoverRoot {
     }
+}
+export interface ReNostrNoteEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLReNostrNoteEditorElement;
 }
 declare global {
     interface HTMLReNostrNoteEditorElement extends Components.ReNostrNoteEditor, HTMLStencilElement {
@@ -43,6 +50,13 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ReNostrNoteEditor {
+        /**
+          * Emits the content of the note when it is updated.
+         */
+        "onUpdateNote"?: (event: ReNostrNoteEditorCustomEvent<string>) => void;
+        /**
+          * Placeholder text to show before the user starts typing.
+         */
         "placeholder"?: string;
     }
     interface ReNostrPopoverNote {

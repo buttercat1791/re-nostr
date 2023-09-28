@@ -19,12 +19,24 @@ export class ReNostrPopoverNote {
     quote: string;
   };
 
+  @Listen('updateNote')
+  onUpdateNote(event: CustomEvent<string>) {
+    this.noteContent.note = event.detail;
+  }
+
   @Listen('click')
   onClick(event: MouseEvent) {
     const target = event.target as HTMLElement;
 
     if (target.id === this.sendButtonId) {
+      console.log(this.noteContent);
+    }
+  }
 
+  componentWillLoad() {
+    this.noteContent = {
+      note: '',
+      quote: this.quotedContent,
     }
   }
 

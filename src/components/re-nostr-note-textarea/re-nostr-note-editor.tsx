@@ -1,4 +1,14 @@
-import { Component, Host, Prop, State, h } from '@stencil/core';
+import {
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  Host,
+  Listen,
+  Prop,
+  State,
+  h
+} from '@stencil/core';
 
 @Component({
   tag: 're-nostr-note-editor',
@@ -7,38 +17,48 @@ import { Component, Host, Prop, State, h } from '@stencil/core';
 })
 export class ReNostrNoteEditor {
 
-  private readonly noteInputId: string = 'noteInput';
+  @Element() el: HTMLElement;
 
+  /**
+   * Placeholder text to show before the user starts typing.
+   */
   @Prop() placeholder?: string = 'Say something...';
 
+  /**
+   * Emits the content of the note when it is updated.
+   */
+  @Event() updateNote: EventEmitter<string>;
+
+  /**
+   * Stores the content of the note.
+   */
   @State() noteContent?: string;
 
-  onFocus(event: FocusEvent) {
-    const eventTarget = event.target as HTMLElement;
-  }
+  private textarea?: HTMLTextAreaElement;
 
-  onInput(event: InputEvent) {
-    const eventTarget = event.target as HTMLElement;
-    this.noteContent = eventTarget.textContent;
+  @Listen('input', { capture: true })
+  onInput() {
+    this.noteContent = this.textarea.value;
+    this.updateNote.emit(this.noteContent);
   }
 
   componentWillLoad() {
     this.noteContent = this.placeholder;
   }
 
+  componentDidLoad() {
+    this.textarea = this.el.shadowRoot.querySelector('#noteEditorInput');
+  }
+
   render() {
     return (
       <Host>
-        <article
-          id={this.noteInputId}
-          class='reNostrContentEditable'
-          contentEditable={true}
-          onFocus={this.onFocus}
-          onInput={this.onInput}
-        >
-          {this.noteContent}
-          <slot />
-        </article>
+        <textarea
+          id='noteEditorInput'
+          class='reNostrInput'
+          placeholder={this.placeholder}
+        />
+        <slot />
       </Host>
     );
   }
