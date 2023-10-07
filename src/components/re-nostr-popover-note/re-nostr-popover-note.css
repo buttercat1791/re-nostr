@@ -4,15 +4,5 @@
 :host {
   display: flex;
   flex-direction: column;
-}
-
-blockquote#quotedContent {
-  height: fit-content;
-  margin: calc(var(--theme-margin) * 2) 0px 0px 0px;
-  height: auto;
-}
-
-button#sendButton {
-  margin-left: 0px;
-  margin-right: 0px;
+  height: 100%;
 }

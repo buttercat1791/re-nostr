@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ReNostrNoteEditor {
         /**
+          * Any content that should populate the note editor before the user starts typing.
+         */
+        "initialContent"?: string;
+        /**
           * Placeholder text to show before the user starts typing.
          */
         "placeholder"?: string;
@@ -50,6 +54,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ReNostrNoteEditor {
+        /**
+          * Any content that should populate the note editor before the user starts typing.
+         */
+        "initialContent"?: string;
         /**
           * Emits the content of the note when it is updated.
          */

@@ -25,6 +25,11 @@ export class ReNostrNoteEditor {
   @Prop() placeholder?: string = 'Say something...';
 
   /**
+   * Any content that should populate the note editor before the user starts typing.
+   */
+  @Prop() initialContent?: string;
+
+  /**
    * Emits the content of the note when it is updated.
    */
   @Event() updateNote: EventEmitter<string>;
@@ -57,8 +62,8 @@ export class ReNostrNoteEditor {
           id='noteEditorInput'
           class='reNostrInput'
           placeholder={this.placeholder}
+          value={`\n\n> ${this.initialContent}\n`}
         />
-        <slot />
       </Host>
     );
   }

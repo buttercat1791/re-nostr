@@ -5,7 +5,8 @@ import { Config } from '@stencil/core';
 export const config: Config = {
   taskQueue: 'async',
   namespace: 're-nostr',
-  globalStyle: 'src/global/variables.css',
+  globalScript: 'src/global/global.ts',
+  globalStyle: 'src/global/global.css',
   outputTargets: [
     {
       type: 'dist',

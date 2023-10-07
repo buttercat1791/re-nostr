@@ -7,21 +7,20 @@ import { Component, Host, Listen, Prop, State, h } from '@stencil/core';
 })
 export class ReNostrPopoverNote {
 
-  private readonly quotedContentId: string = 'quotedContent';
   private readonly sendButtonId: string = 'sendButton';
 
   @Prop() includeQuote: boolean;
 
   @Prop() quotedContent?: string;
 
-  @State() noteContent?: {
-    note: string;
-    quote: string;
-  };
+  /**
+   * The content of the note in Markdown format.
+   */
+  @State() noteContent?: string;
 
   @Listen('updateNote')
   onUpdateNote(event: CustomEvent<string>) {
-    this.noteContent.note = event.detail;
+    this.noteContent = event.detail;
   }
 
   @Listen('click')
@@ -31,36 +30,20 @@ export class ReNostrPopoverNote {
     if (target.id === this.sendButtonId) {
       console.log(this.noteContent);
     }
-  }
 
-  componentWillLoad() {
-    this.noteContent = {
-      note: '',
-      quote: this.quotedContent,
-    }
+    ndkService.sendEvent(this.noteContent);
   }
 
   render() {
     return (
       <Host>
-        <re-nostr-note-editor>
-          {this.includeQuote && this.renderQuotedContent()}
-        </re-nostr-note-editor>
-        <button id={this.sendButtonId} class='reNostrButton'>Send</button>
+        <re-nostr-note-editor initialContent={this.quotedContent}/>
+        <button id={this.sendButtonId} class='reNostrButton'>
+          Send
+          <i class="fa-regular fa-paper-plane"></i>
+        </button>
       </Host>   
     );
-  }
-
-  private renderQuotedContent() {
-    return (
-      <blockquote
-        id={this.quotedContentId}
-        class='reNostrBlockquote'
-        contentEditable={false}
-      >
-        {this.quotedContent}
-      </blockquote>
-    )
   }
 
 }
