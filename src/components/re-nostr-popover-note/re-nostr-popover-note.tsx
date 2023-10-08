@@ -31,7 +31,7 @@ export class ReNostrPopoverNote {
       console.log(this.noteContent);
     }
 
-    ndkService.sendEvent(this.noteContent);
+    globalThis.ndkService.sendEvent(this.noteContent);
   }
 
   render() {
