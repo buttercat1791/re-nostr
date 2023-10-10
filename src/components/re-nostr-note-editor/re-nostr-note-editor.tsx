@@ -47,12 +47,10 @@ export class ReNostrNoteEditor {
     this.updateNote.emit(this.noteContent);
   }
 
-  componentWillLoad() {
-    this.noteContent = this.placeholder;
-  }
-
   componentDidLoad() {
     this.textarea = this.el.shadowRoot.querySelector('#noteEditorInput');
+    this.noteContent = this.textarea.value;
+    this.updateNote.emit(this.noteContent);
   }
 
   render() {
