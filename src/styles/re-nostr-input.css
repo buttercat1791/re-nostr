@@ -16,15 +16,15 @@
   border-color: var(--theme-primary-color);
 }
 
-.reNostrInput::-webkit-scrollbar {
+textarea.reNostrInput::-webkit-scrollbar {
   width: var(--theme-scrollbar-width);
 }
 
-.reNostrInput::-webkit-scrollbar-track {
+textarea.reNostrInput::-webkit-scrollbar-track {
   background-color: var(--theme-background-color);
 }
 
-.reNostrInput::-webkit-scrollbar-thumb {
+textarea.reNostrInput::-webkit-scrollbar-thumb {
   background-color: var(--theme-border-color);
   border-radius: calc(var(--theme-border-radius) / 2);
 }

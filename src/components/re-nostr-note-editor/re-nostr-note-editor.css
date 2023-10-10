@@ -4,9 +4,18 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  border: var(--theme-border-width) solid var(--theme-border-color);
+  border-radius: var(--theme-border-radius);
+  margin: var(--theme-margin);
+  overflow-y: none;
+}
+
+:host(:focus-within) {
+  border-color: var(--theme-primary-color);
 }
 
 #noteEditorInput {
-  height: 100%;
+  height: calc(100% - 2 * var(--theme-padding));
   background-color: var(--theme-background-color);
+  border: none;
 }
