@@ -1,7 +1,6 @@
 button.reNostrButton {
   display: inline-block;
   text-align: center;
-  vertical-align: middle;
   user-select: none;
   border: var(--theme-border-width) solid transparent;
   border-radius: var(--theme-border-radius);
@@ -35,4 +34,11 @@ button.reNostrButton:active {
   color: var(--theme-card-color);
   background-color: var(--theme-primary-color);
   border-color: var(--theme-primary-color);
+}
+
+button.reNostrButton span,
+button.reNostrButton ion-icon {
+  vertical-align: middle;
+  height: var(--theme-font-size);
+  margin: calc(var(--theme-margin) / 2);
 }

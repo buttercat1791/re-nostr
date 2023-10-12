@@ -13,10 +13,7 @@ export class ReNostrPopoverRoot {
   render() {
     return (
       <Host>
-        <re-nostr-popover-note
-          includeQuote={true}
-          quotedContent={this.loremIpsumText}
-        />
+        <re-nostr-popover-note quotedContent={this.loremIpsumText} />
       </Host>
     );
   }

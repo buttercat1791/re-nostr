@@ -8,8 +8,7 @@ import { Component, Host, Listen, Prop, State, h } from '@stencil/core';
 export class ReNostrPopoverNote {
 
   private readonly sendButtonId: string = 'sendButton';
-
-  @Prop() includeQuote: boolean;
+  private readonly sendButtonText: string = 'Send';
 
   @Prop() quotedContent?: string;
 
@@ -26,13 +25,11 @@ export class ReNostrPopoverNote {
   @Listen('click', { capture: true, target: 'body' })
   onClick(event: any) {
     try {
-      const target = event.originalTarget as HTMLElement;
-
-      if (target?.id === this.sendButtonId) {
+      if (event.originalTarget.id === this.sendButtonId) {
         globalThis.ndkService.sendEvent(this.noteContent);
       }
 
-      target.blur();
+      event.originalTarget.blur();
     } catch (error) {
       // Clicks outside the send button will throw an error indicating the app
       // is not allowed to access target.id.  This doesn't impact the app's
@@ -46,7 +43,8 @@ export class ReNostrPopoverNote {
       <Host>
         <re-nostr-note-editor initialContent={this.quotedContent}/>
         <button id={this.sendButtonId} class='reNostrButton'>
-          Send
+          <span>{this.sendButtonText}</span>
+          <ion-icon name="send-sharp" />
         </button>
       </Host>   
     );
