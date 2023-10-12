@@ -16,4 +16,5 @@ export const config: Config = {
   devServer: {
     initialLoadUrl: 'pages/popover.html',
   },
+  validatePrimaryPackageOutputTarget: true,
 };

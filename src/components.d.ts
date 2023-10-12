@@ -17,7 +17,6 @@ export namespace Components {
         "placeholder"?: string;
     }
     interface ReNostrPopoverNote {
-        "includeQuote": boolean;
         "quotedContent"?: string;
     }
     interface ReNostrPopoverRoot {
@@ -68,7 +67,6 @@ declare namespace LocalJSX {
         "placeholder"?: string;
     }
     interface ReNostrPopoverNote {
-        "includeQuote"?: boolean;
         "quotedContent"?: string;
     }
     interface ReNostrPopoverRoot {
