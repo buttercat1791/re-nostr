@@ -1,5 +1,4 @@
 import NDK from '@nostr-dev-kit/ndk';
-import NDKSingleton from '../singletons/ndk';
 
 declare global {
   interface NDKService {
@@ -14,5 +13,3 @@ declare global {
    */
   var ndkService: NDKService;
 }
-
-globalThis.ndkService = NDKSingleton;
