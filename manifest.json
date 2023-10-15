@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "manifest_version": 3,
   "icons": {
-    "512": "./src/assets/icon/icon.png"
+    "128": "./assets/ostrich.png"
   },
   "action": {
-    "default_popup": "./src/index.html",
+    "default_popup": "./pages/popover.html",
     "default_title": "Re:Nostr"
   },
   "permissions": [
