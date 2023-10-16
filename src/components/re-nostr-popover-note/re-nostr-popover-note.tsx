@@ -26,7 +26,10 @@ export class ReNostrPopoverNote {
   onClick(event: any) {
     try {
       if (event.originalTarget.id === this.sendButtonId) {
-        globalThis.ndkService.sendEvent(this.noteContent);
+        // TODO: Remove the log and uncomment the line below when NIP-07 is implemented.
+        console.log(this.noteContent);
+        // globalThis.ndkService.sendEvent(this.noteContent);
+        // TODO: Close note writer on success.
       }
 
       event.originalTarget.blur();
