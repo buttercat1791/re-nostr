@@ -1,0 +1,45 @@
+:root {
+  /*
+  Global variables
+  */
+
+  /* Dark theme color variables */
+  --theme-text-color: #fff;
+  --theme-placeholder-color: #bbb;
+  --theme-title-color: #fff;
+  --theme-primary-color: #b5ff6b;
+  --theme-secondary-color: #383838;
+  --theme-tertiary-color: #fff;
+  --theme-border-color: #222;
+  --theme-card-color: #111;
+  --theme-background-color: #000;
+
+  /* Font variables */
+  --theme-font-family: Helvetica, Arial, sans-serif;
+  --theme-font-size: 14px;
+  --theme-font-weight: 400;
+  --theme-font-weight-bold: 600;
+
+  /* Padding variables */
+  --theme-padding: 8px;
+  --theme-margin: 4px;
+  
+  /* Border variables */
+  --theme-border-radius: 8px;
+  --theme-border-width: 2px;
+
+  /* Scrollbar variables */
+  --theme-scrollbar-width: 4px;
+
+  /*
+  Global styles
+  */
+
+  /* Global theme styles */
+  background-color: var(--theme-background-color);
+
+  /* Global text styles */
+  color: var(--theme-text-color);
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-font-size);
+}

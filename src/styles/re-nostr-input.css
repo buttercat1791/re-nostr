@@ -1,0 +1,35 @@
+.reNostrInput {
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-font-size);
+  color: var(--theme-text-color);
+  background-color: var(--theme-card-color);
+  border: var(--theme-border-width) solid var(--theme-border-color);
+  border-radius: var(--theme-border-radius);
+  padding: var(--theme-padding);
+  margin: var(--theme-margin);
+  scrollbar-width: thin;
+  scrollbar-color: var(--theme-border-color) var(--theme-background-color);
+}
+
+.reNostrInput:focus {
+  outline: none;
+  border-color: var(--theme-primary-color);
+}
+
+textarea.reNostrInput::-webkit-scrollbar {
+  width: var(--theme-scrollbar-width);
+}
+
+textarea.reNostrInput::-webkit-scrollbar-track {
+  background-color: var(--theme-background-color);
+}
+
+textarea.reNostrInput::-webkit-scrollbar-thumb {
+  background-color: var(--theme-border-color);
+  border-radius: calc(var(--theme-border-radius) / 2);
+}
+
+textarea.reNostrInput {
+  resize: none;
+  overflow-y: auto;
+}

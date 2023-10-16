@@ -1,6 +1,7 @@
 dist/
 !www/favicon.ico
 www/
+web-ext-artifacts/
 
 *~
 *.sw[mnpcod]

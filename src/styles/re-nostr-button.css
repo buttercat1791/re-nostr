@@ -1,0 +1,44 @@
+button.reNostrButton {
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  border: var(--theme-border-width) solid transparent;
+  border-radius: var(--theme-border-radius);
+  padding: var(--theme-padding);
+  margin: var(--theme-margin);
+  font-weight: var(--theme-font-weight-bold);
+  color: var(--theme-primary-color);
+  background-color: var(--theme-secondary-color);
+  cursor: pointer;
+}
+
+button.reNostrButton.primary {
+  color: var(--theme-card-color);
+  background-color: var(--theme-primary-color);
+  border-color: var(--theme-primary-color);
+}
+
+button.reNostrButton:hover {
+  color: var(--theme-card-color);
+  background-color: var(--theme-primary-color);
+  border-color: var(--theme-primary-color);
+}
+
+button.reNostrButton:focus {
+  color: var(--theme-card-color);
+  background-color: var(--theme-primary-color);
+  border-color: var(--theme-primary-color);
+}
+
+button.reNostrButton:active {
+  color: var(--theme-card-color);
+  background-color: var(--theme-primary-color);
+  border-color: var(--theme-primary-color);
+}
+
+button.reNostrButton span,
+button.reNostrButton ion-icon {
+  vertical-align: middle;
+  height: var(--theme-font-size);
+  margin: calc(var(--theme-margin) / 2);
+}

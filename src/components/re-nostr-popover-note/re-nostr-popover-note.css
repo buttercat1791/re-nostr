@@ -1,0 +1,8 @@
+@import url("../../styles/re-nostr-blockquote.css");
+@import url("../../styles/re-nostr-button.css");
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

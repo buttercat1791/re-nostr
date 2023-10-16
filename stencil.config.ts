@@ -3,24 +3,18 @@ import { Config } from '@stencil/core';
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
-  globalStyle: 'src/global/app.css',
-  globalScript: 'src/global/app.ts',
   taskQueue: 'async',
   namespace: 're-nostr',
+  globalScript: 'dist/collection/global/global.js',
+  globalStyle: 'src/global/global.css',
   outputTargets: [
     {
       type: 'dist',
-    },
-    {
-      type: 'dist-custom-elements',
-      generateTypeDeclarations: true,
-      includeGlobalScripts: true,
-    },
-    {
-      type: 'www',
-      // comment the following line to disable service workers in production
-      serviceWorker: null,
-      baseUrl: 'https://myapp.local/',
+      isPrimaryPackageOutputTarget: true,
     },
   ],
+  devServer: {
+    initialLoadUrl: 'pages/popover.html',
+  },
+  validatePrimaryPackageOutputTarget: true,
 };
