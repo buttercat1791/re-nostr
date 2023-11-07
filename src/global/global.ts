@@ -1,18 +1,14 @@
-import NDK from '@nostr-dev-kit/ndk';
-import NDKSingleton from '../singletons/ndk';
+import NostrConnectSingleton from '../singletons/nostr-connect';
 
 declare global {
-  interface NDKService {
-    ndk: NDK;
-
-    connectRelays: () => void;
+  interface INostrConnect {
     sendEvent: (content: string, kind?: number) => Promise<boolean>;
   }
 
   /**
    * Global singleton wrapper for NDK.  Declared in src/singletons/ndk.ts.
    */
-  var ndkService: NDKService;
+  var nostrConnect: INostrConnect;
 }
 
-globalThis.ndkService = NDKSingleton;
+globalThis.nostrConnect = NostrConnectSingleton;
